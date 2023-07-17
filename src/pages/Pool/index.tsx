@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Pair } from '@pancakeswap-libs/sdk'
 import { Button, CardBody, Text } from '@cardioswap/uikit'
+import { Link } from 'react-router-dom'
 import CardNav from 'components/CardNav'
 import Question from 'components/QuestionHelper'
 import FullPositionCard from 'components/PositionCard'
@@ -10,7 +11,6 @@ import { StyledInternalLink } from 'components/Shared'
 import { LightCard } from 'components/Card'
 import { RowBetween } from 'components/Row'
 import { AutoColumn } from 'components/Column'
-import Container from 'components/Container'
 
 import { useActiveWeb3React } from 'hooks'
 import { usePairs } from 'data/Reserves'
@@ -55,15 +55,15 @@ export default function Pool() {
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
 
   return (
-    <Container>
+    <>
       <CardNav activeIndex={1} />
       <AppBody>
         <PageHeader
           title={TranslateString(262, 'Liquidity')}
           description={TranslateString(1168, 'Add liquidity to receive LP tokens')}
         >
-          <Button id="join-pool-button" disabled mb="16px">
-            {TranslateString(168, "You can't add liquidity on V1")}
+          <Button id="join-pool-button" as={Link} to="/add/ETH">
+            {TranslateString(168, 'Add Liquidity')}
           </Button>
         </PageHeader>
         <AutoColumn gap="lg" justify="center">
@@ -120,6 +120,6 @@ export default function Pool() {
           </CardBody>
         </AutoColumn>
       </AppBody>
-    </Container>
+    </>
   )
 }
