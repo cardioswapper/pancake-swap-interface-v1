@@ -1,4 +1,4 @@
-import { Currency, ETHER, JSBI, TokenAmount } from '@pancakeswap-libs/sdk'
+import { Currency, ETHER, JSBI, TokenAmount } from '@cardioswap/v2-sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Button, ChevronDownIcon, AddIcon, CardBody, Text } from '@cardioswap/uikit'
 import CardNav from 'components/CardNav'
@@ -15,8 +15,10 @@ import { useTokenBalance } from 'state/wallet/hooks'
 import { StyledInternalLink } from 'components/Shared'
 import { currencyId } from 'utils/currencyId'
 import useI18n from 'hooks/useI18n'
+import Container from 'components/Container'
 import AppBody from '../AppBody'
 import { Dots } from '../Pool/styleds'
+
 
 enum Fields {
   TOKEN0 = 0,
@@ -80,7 +82,7 @@ export default function PoolFinder() {
   )
 
   return (
-    <>
+    <Container>
       <CardNav activeIndex={1} />
       <AppBody>
         <FindPoolTabs />
@@ -177,6 +179,6 @@ export default function PoolFinder() {
           />
         </CardBody>
       </AppBody>
-    </>
+    </Container>
   )
 }

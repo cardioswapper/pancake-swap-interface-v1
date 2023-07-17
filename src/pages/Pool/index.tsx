@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
-import { Pair } from '@pancakeswap-libs/sdk'
+import { Pair } from '@cardioswap/v2-sdk'
 import { Button, CardBody, Text } from '@cardioswap/uikit'
 import { Link } from 'react-router-dom'
 import CardNav from 'components/CardNav'
@@ -11,7 +11,7 @@ import { StyledInternalLink } from 'components/Shared'
 import { LightCard } from 'components/Card'
 import { RowBetween } from 'components/Row'
 import { AutoColumn } from 'components/Column'
-
+import Container from 'components/Container'
 import { useActiveWeb3React } from 'hooks'
 import { usePairs } from 'data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from 'state/user/hooks'
@@ -55,7 +55,7 @@ export default function Pool() {
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
 
   return (
-    <>
+    <Container>
       <CardNav activeIndex={1} />
       <AppBody>
         <PageHeader
@@ -120,6 +120,6 @@ export default function Pool() {
           </CardBody>
         </AutoColumn>
       </AppBody>
-    </>
+    </Container>
   )
 }

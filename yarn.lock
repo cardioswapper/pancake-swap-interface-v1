@@ -1141,16 +1141,6 @@
     "@web3-react/types" "^6.0.7"
     tiny-warning "^1.0.3"
 
-"@cardioswap/uikit@git+https://github.com/cardioswap/uikit-dist.git":
-  version "0.15.1"
-  resolved "git+https://github.com/cardioswap/uikit-dist.git#02549e194180b5f7e43f710e906b4158a8c6bba4"
-  dependencies:
-    "@types/lodash" "^4.14.162"
-    "@types/styled-system" "^5.1.10"
-    lodash "^4.17.20"
-    react-transition-group "^4.4.1"
-    styled-system "^5.1.5"
-
 "@cardioswap/uikit@https://github.com/cardioswap/uikit-dist":
   version "0.27.0"
   resolved "https://github.com/cardioswap/uikit-dist#44cbc1a6c3ae6c59f9640dfef8911f58c623a3f7"
@@ -1162,6 +1152,22 @@
     react-popper "^2.2.5"
     react-transition-group "^4.4.1"
     styled-system "^5.1.5"
+
+"@cardioswap/v2-core@https://github.com/cardioswap/v2-core.git":
+  version "1.0.1"
+  resolved "https://github.com/cardioswap/v2-core.git#d0bb7099cca052cdf1d47ecba26006e7ba5b0717"
+
+"@cardioswap/v2-sdk@https://github.com/cardioswap/v2-sdk":
+  version "1.0.0"
+  resolved "https://github.com/cardioswap/v2-sdk#72fcc4f9f936dd7f4cec21cfbc9d03a5f8b44632"
+  dependencies:
+    "@cardioswap/v2-core" "https://github.com/cardioswap/v2-core.git"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.1"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -2131,19 +2137,6 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@pancakeswap-libs/sdk@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@pancakeswap-libs/sdk/-/sdk-1.0.1.tgz#602e6da34fd5bde0f3c869f9abe63bb5f4aaf063"
-  integrity sha512-N4EZlAD0PD7lgVEE8jOufUPRNBvcR3STSjBC9QVwoKmmH1czEY9lu8/SySecKchZtSi66qAfsrghkdXo8tnJsg==
-  dependencies:
-    "@uniswap/v2-core" "^1.0.0"
-    big.js "^5.2.2"
-    decimal.js-light "^2.5.0"
-    jsbi "^3.1.1"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-    toformat "^2.0.0"
-
 "@pedrouid/iso-crypto@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@pedrouid/iso-crypto/-/iso-crypto-1.0.0.tgz#cf06b40ef3da3d7ca7363bd7a521ed59fa2fd13d"
@@ -2655,7 +2648,7 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.168.tgz#fe24632e79b7ade3f132891afff86caa5e5ce008"
   integrity sha512-oVfRvqHV/V6D1yifJbVRU3TMp8OT6o6BG+U9MkwuJ3U8/CsDHvalRpsxBqivn71ztOFZBTfJMvETbqHiaNSj7Q==
 
-"@types/lodash@^4.14.162", "@types/lodash@^4.14.168":
+"@types/lodash@^4.14.168":
   version "4.14.195"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.195.tgz#bafc975b252eb6cea78882ce8a7b6bf22a6de632"
   integrity sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==
@@ -3034,11 +3027,6 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.0.tgz#e0fab91a7d53e8cafb5326ae4ca18351116b0844"
   integrity sha512-BJiXrBGnN8mti7saW49MXwxDBRFiWemGetE58q8zgfnPPzQKq55ADltEILqOt6VFZ22kVeVKbF8gVd8aY3l7pA==
-
-"@uniswap/v2-core@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.1.tgz#af8f508bf183204779938969e2e54043e147d425"
-  integrity sha512-MtybtkUPSyysqLY2U210NBDeCHX+ltHt3oADGdjqoThZaFRDKwM6k1Nb3F0A3hk5hwuQvytFWhrWHOEq6nVJ8Q==
 
 "@uniswap/v2-periphery@^1.1.0-beta.0":
   version "1.1.0-beta.0"

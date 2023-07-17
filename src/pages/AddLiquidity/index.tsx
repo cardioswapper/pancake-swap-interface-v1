@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@pancakeswap-libs/sdk'
+import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@cardioswap/v2-sdk'
 import { Button, CardBody, AddIcon, Text as UIKitText } from '@cardioswap/uikit'
 import { RouteComponentProps } from 'react-router-dom'
 import { LightCard } from 'components/Card'
@@ -13,7 +13,7 @@ import DoubleCurrencyLogo from 'components/DoubleLogo'
 import { AddRemoveTabs } from 'components/NavigationTabs'
 import { MinimalPositionCard } from 'components/PositionCard'
 import Row, { RowBetween, RowFlat } from 'components/Row'
-
+import Container from 'components/Container'
 import { PairState } from 'data/Reserves'
 import { useActiveWeb3React } from 'hooks'
 import { useCurrency } from 'hooks/Tokens'
@@ -288,7 +288,7 @@ export default function AddLiquidity({
   }, [onFieldAInput, txHash])
 
   return (
-    <>
+    <Container>
       <CardNav activeIndex={1} />
       <AppBody>
         <AddRemoveTabs adding />
@@ -446,6 +446,6 @@ export default function AddLiquidity({
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
         </AutoColumn>
       ) : null}
-    </>
+    </Container>
   )
 }

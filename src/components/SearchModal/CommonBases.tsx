@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from '@cardioswap/uikit'
-import { ChainId, Currency, currencyEquals, ETHER, Token } from '@pancakeswap-libs/sdk'
+import { ChainId, Currency, currencyEquals, ETHER, Token } from '@cardioswap/v2-sdk'
 import styled from 'styled-components'
 
 import useI18n from 'hooks/useI18n'
@@ -52,7 +52,7 @@ export default function CommonBases({
           disable={selectedCurrency === ETHER}
         >
           <CurrencyLogo currency={ETHER} style={{ marginRight: 8 }} />
-          <Text>BNB</Text>
+          <Text>PLS</Text>
         </BaseWrapper>
         {(chainId ? SUGGESTED_BASES[chainId] : []).map((token: Token) => {
           const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address

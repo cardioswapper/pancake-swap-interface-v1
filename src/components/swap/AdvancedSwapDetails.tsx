@@ -1,5 +1,5 @@
 import React from 'react'
-import { Trade, TradeType } from '@pancakeswap-libs/sdk'
+import { Trade, TradeType } from '@cardioswap/v2-sdk'
 import { Card, CardBody, Text } from '@cardioswap/uikit'
 import useI18n from 'hooks/useI18n'
 import { Field } from '../../state/swap/actions'

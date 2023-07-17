@@ -1,4 +1,4 @@
-import { Token } from '@pancakeswap-libs/sdk'
+import { Token } from '@cardioswap/v2-sdk'
 import { transparentize } from 'polished'
 import { Button, Text } from '@cardioswap/uikit'
 import React, { useCallback, useMemo, useState } from 'react'

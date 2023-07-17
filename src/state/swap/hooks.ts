@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@pancakeswap-libs/sdk'
+import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@cardioswap/v2-sdk'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -33,7 +33,7 @@ export function useSwapActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'BNB' : '',
+          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'PLS' : '',
         })
       )
     },
@@ -201,8 +201,8 @@ function parseCurrencyFromURLParameter(urlParam: any): string {
   if (typeof urlParam === 'string') {
     const valid = isAddress(urlParam)
     if (valid) return valid
-    if (urlParam.toUpperCase() === 'BNB') return 'BNB'
-    if (valid === false) return 'BNB'
+    if (urlParam.toUpperCase() === 'PLS') return 'PLS'
+    if (valid === false) return 'PLS'
   }
   return ''
 }
