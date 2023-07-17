@@ -1,19 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Modal, Text, Link, Button, Flex, Checkbox, Box } from '@pancakeswap-libs/uikit'
+import { Modal, Text, Button, Flex, Checkbox, Box } from '@cardioswap/uikit'
 
 const defaultOnDismiss = () => null
-
-const StyledLink = styled(Link)`
-  width: 100%;
-`
-
-const Divider = styled.div`
-  margin: 24px 0;
-  width: 100%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.colors.borderColor};
-`
 
 const StyledCheckbox = styled(Checkbox)`
   min-width: 24px;
@@ -27,11 +16,11 @@ const StyledButton = styled(Button)`
   color: ${({ theme }) => theme.colors.failure};
 `
 
-type UseV2ExchangeModalProps = {
+type UseAtRiskModalProps = {
   onDismiss?: () => void
 }
 
-const UseV2ExchangeModal = ({ onDismiss = defaultOnDismiss }: UseV2ExchangeModalProps) => {
+const UseAtRiskModal = ({ onDismiss = defaultOnDismiss }: UseAtRiskModalProps) => {
   const [isAcknowledged, setIsAcknowledged] = useState(false)
 
   useEffect(() => {
@@ -53,18 +42,8 @@ const UseV2ExchangeModal = ({ onDismiss = defaultOnDismiss }: UseV2ExchangeModal
   }, [])
 
   return (
-    <Modal onDismiss={onDismiss} title="Use V2 Exchange" hideCloseButton>
+    <Modal onDismiss={onDismiss} title="Use under your own risk" hideCloseButton>
       <Box maxWidth="320px">
-        <Text color="failure" mb="24px">
-          PancakeSwap V1 is no longer supported.
-        </Text>
-        <Text mb="24px">Go to the V2 Exchange instead for better prices on most pairs.</Text>
-        <StyledLink href="https://exchange.pancakeswap.finance/#/swap" external>
-          <Button mt="8px" width="100%">
-            Go to V2 Exchange
-          </Button>
-        </StyledLink>
-        <Divider />
         <StyledLabel htmlFor="acknowledgement">
           <Flex alignItems="center" justifyContent="space-between">
             <StyledCheckbox
@@ -74,17 +53,16 @@ const UseV2ExchangeModal = ({ onDismiss = defaultOnDismiss }: UseV2ExchangeModal
               scale="sm"
             />
             <Text ml="16px" color={isAcknowledged ? 'text' : 'textDisabled'}>
-              I understand that V1 is no longer supported, and I may experience significant slippage, resulting in lost
-              capital.
+              I understand that CardioSwap frontend is in the initial stages of development and that no audit has been conducted, I trade under my own risk.
             </Text>
           </Flex>
         </StyledLabel>
         <StyledButton mt="24px" width="100%" variant="text" disabled={!isAcknowledged} onClick={onDismiss}>
-          Continue to V1 Anyway
+          Continue to Trade Anyway
         </StyledButton>
       </Box>
     </Modal>
   )
 }
 
-export default UseV2ExchangeModal
+export default UseAtRiskModal

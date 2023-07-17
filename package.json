@@ -5,10 +5,10 @@
   "private": true,
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
+    "@cardioswap/uikit": "https://github.com/cardioswap/uikit-dist",
     "@crowdin/crowdin-api-client": "^1.8.16",
     "@ethersproject/experimental": "^5.0.1",
     "@pancakeswap-libs/sdk": "1.0.1",
-    "@cardioswap/uikit": "git+https://github.com/cardioswap/uikit-dist.git",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",

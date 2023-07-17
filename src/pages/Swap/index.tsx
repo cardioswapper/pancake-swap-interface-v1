@@ -1,7 +1,7 @@
 import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap-libs/sdk'
-import React, { useCallback, useContext, useEffect, useMemo, useState, useRef } from 'react'
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
-import { CardBody, ArrowDownIcon, Button, IconButton, Text, useModal, Link, Flex } from '@pancakeswap-libs/uikit'
+import { CardBody, ArrowDownIcon, Button, IconButton, Text, Link, Flex } from '@cardioswap/uikit'
 import styled, { ThemeContext } from 'styled-components'
 import AddressInputPanel from 'components/AddressInputPanel'
 import Card, { GreyCard } from 'components/Card'
@@ -36,7 +36,6 @@ import Loader from 'components/Loader'
 import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import V2ExchangeRedirectModal from 'components/V2ExchangeRedirectModal'
 import AppBody from '../AppBody'
 
 const StyledLink = styled(Link)`
@@ -51,10 +50,6 @@ const Swap = () => {
   const [disableSwap, setDisableSwap] = useState(false)
   const [hasPoppedModal, setHasPoppedModal] = useState(false)
   const [interruptRedirectCountdown, setInterruptRedirectCountdown] = useState(false)
-  const [onPresentV2ExchangeRedirectModal] = useModal(
-    <V2ExchangeRedirectModal handleCloseModal={() => setInterruptRedirectCountdown(true)} />
-  )
-  const onPresentV2ExchangeRedirectModalRef = useRef(onPresentV2ExchangeRedirectModal)
   // token warning stuff
   const [loadedInputCurrency, loadedOutputCurrency] = [
     useCurrency(loadedUrlParams?.inputCurrencyId),
@@ -139,7 +134,6 @@ const Swap = () => {
       // Prevent infinite re-render of modal with this condition
       if (!hasPoppedModal) {
         setHasPoppedModal(true)
-        onPresentV2ExchangeRedirectModalRef.current()
       }
 
       // Controls the swap buttons being disabled & renders a message
@@ -172,7 +166,6 @@ const Swap = () => {
     currencies,
     hasPoppedModal,
     modalCountdownSecondsRemaining,
-    onPresentV2ExchangeRedirectModalRef,
     interruptRedirectCountdown,
   ])
 
