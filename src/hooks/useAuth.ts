@@ -12,6 +12,7 @@ import {
 import { connectorLocalStorageKey, ConnectorNames } from '@cardioswap/uikit'
 import useToast from 'hooks/useToast'
 import { connectorsByName } from 'connectors'
+import SwitchNetwork from './useSwitchToPulse'
 
 const useAuth = () => {
   const { activate, deactivate } = useWeb3React()
@@ -24,6 +25,7 @@ const useAuth = () => {
         window.localStorage.removeItem(connectorLocalStorageKey)
         if (error instanceof UnsupportedChainIdError) {
           toastError('Unsupported Chain Id', 'Unsupported Chain Id Error. Check your chain Id.')
+          SwitchNetwork()
         } else if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
           toastError('Provider Error', 'No provider was found')
         } else if (
