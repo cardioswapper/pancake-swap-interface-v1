@@ -1,7 +1,7 @@
 {
-  "name": "@pancakeswap/interface",
-  "description": "Pancakeswap Interface",
-  "homepage": ".",
+  "name": "@cardioswap/interface",
+  "description": "CardioSwap Interface",
+  "homepage": "https://cardioswap.io/",
   "private": true,
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
